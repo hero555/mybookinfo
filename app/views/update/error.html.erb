@@ -1,0 +1,55 @@
+<%# -*- coding: utf-8 -*-%>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css">
+  <title>蔵書管理</title>
+</head>
+<body>
+<h1>蔵書管理</h1>
+<h2>蔵書データの再登録</h2>
+<p>登録データを入力してください｜
+<a href="http://localhost:3000">メニュー画面に戻る</a></p>
+<hr>
+
+<form method="post" action="edit">
+<table>
+  <tr>
+    <th>項目名</th><th>入力データ</th>
+  </tr>
+  <tr>
+    <td>タイトル</td>
+    <td><% if @info then %>
+                        <div><%=@info.errors[:title][0] %></div>
+                        <% end %><input type="text" name="title"
+                                value="<% if @error then %><%=@info.title %><% end %>" size="60"></td>
+  </tr>
+  <tr>
+    <td>著者</td>
+    <td><% if @info then %>
+                        <div><%=@info.errors[:author][0] %></div>
+                        <% end %><input type="text" name="author"
+                                value="<% if @error then %><%=@info.author %><% end %>" size="60"></td>
+  </tr>
+  <tr>
+    <td>ページ</td>
+    <td><% if @info then %>
+                        <div><%=@info.errors[:page][0] %></div>
+                        <% end %><input type="text" name="page"
+                                value="<% if @error then %><%=@info.page %><% end %>" size="60"></td>
+  </tr>
+  <tr>
+    <td>出版日</td>
+    <td><% if @info then %>
+                        <div><%=@info.errors[:date_available][0] %></div>
+                        <% end %><input type="text" name="date_available"
+                                value="<% if @error then %><%=@info.date_available %><% end %>" size="60"></td>
+  </tr>
+</table>
+<input type="hidden" name="id" value="<%= @info.id %>">
+<input type="submit" value="確認画面へ">
+</form>
+
+<hr>
+</body>
+</html>

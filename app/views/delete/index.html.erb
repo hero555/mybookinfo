@@ -1,0 +1,43 @@
+<%# -*- coding: utf-8 -*-%>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css">
+  <title>蔵書管理</title>
+</head>
+<body>
+<h1>蔵書管理</h1>
+<h2>蔵書データの削除</h2>
+<p>削除するデータを確認してください｜
+<a href="http://localhost:3000">メニュー画面に戻る</a></p>
+<hr>
+
+<form method="post" action="del">
+<table>
+  <tr>
+    <th>項目名</th><th>入力データ</th>
+  </tr>
+  <tr>
+    <td>タイトル</td>
+    <td><%= @book_info.title %></td>
+  </tr>
+  <tr>
+    <td>著者</td>
+    <td><%= @book_info.author %></td>
+  </tr>
+  <tr>
+    <td>ページ</td>
+    <td><%= @book_info.page %></td>
+  </tr>
+  <tr>
+    <td>出版日</td>
+    <td><%= @book_info.date_available %></td>
+  </tr>
+</table>
+<input type="hidden" name="id" value="<%= @book_info.id %>">
+<input type="submit" value="削除します">
+</form>
+
+<hr>
+</body>
+</html>

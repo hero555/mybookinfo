@@ -1,0 +1,43 @@
+<%# -*- coding: utf-8 -*-%>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <link rel="stylesheet" type="text/css">
+  <title>蔵書管理</title>
+</head>
+<body>
+<h1>蔵書管理</h1>
+<h2>蔵書データの再登録</h2>
+<p>登録データを入力してください｜
+<a href="http://localhost:3000">メニュー画面に戻る</a></p>
+<hr>
+
+<form method="post" action="edit">
+<table>
+  <tr>
+    <th>項目名</th><th>入力データ</th>
+  </tr>
+  <tr>
+    <td>タイトル</td>
+    <td><input type="text" name="title" size="60" value="<%= @info.title %>"></td>
+  </tr>
+  <tr>
+    <td>著者</td>
+    <td><input type="text" name="author" size="60" value="<%= @info.author %>"></td>
+  </tr>
+  <tr>
+    <td>ページ</td>
+    <td><input type="text" name="page" size="60" value="<%= @info.page %>"></td>
+  </tr>
+  <tr>
+    <td>出版日</td>
+    <td><input type="text" name="date_available" size="60" value="<%= @info.date_available %>"></td>
+  </tr>
+</table>
+<input type="hidden" name="id" value="<%= @info.id %>">
+<input type="submit" value="確認画面へ">
+</form>
+
+<hr>
+</body>
+</html>
